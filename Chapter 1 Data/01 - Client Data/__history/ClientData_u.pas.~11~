@@ -1,0 +1,92 @@
+unit ClientData_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, Spin, jpeg;
+
+type
+  TfrmClientData = class(TForm)
+    lblName: TLabel;
+    edtName: TEdit;
+    lbSurname: TLabel;
+    edtSurname: TEdit;
+    lblAge: TLabel;
+    sedAge: TSpinEdit;
+    rgpGender: TRadioGroup;
+    grpPlacesVisited: TGroupBox;
+    cbxParis: TCheckBox;
+    cbxLondon: TCheckBox;
+    cbxRome: TCheckBox;
+    cmbType: TComboBox;
+    lblAccomodationType: TLabel;
+    lblPhoto: TLabel;
+    imgPhoto: TImage;
+    memDisplay: TMemo;
+    btnDisplay: TButton;
+    procedure btnDisplayClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmClientData: TfrmClientData;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmClientData.btnDisplayClick(Sender: TObject);
+var sSurname,sName,sGender,sCategory,sAccType:string;
+    iAge,i,iCount:Integer;
+begin
+  sName:=edtName.Text;
+  sSurname:=edtSurname.Text;
+  iAge:=sedAge.Value;
+  if rgpGender.ItemIndex=0 then
+      sGender:='Male';
+  if rgpGender.ItemIndex=1 then
+      sGender:='Female';
+  memDisplay.Lines.Add('Name:'+#9#9+#9+sName);
+  memDisplay.Lines.Add('Surname:'+#9#9+#9+sSurname);
+  memDisplay.Lines.Add('Age:'+#9#9+#9+IntToStr(iAge));
+  memDisplay.Lines.Add('Gender:'+#9#9+#9+sGender);
+  memDisplay.Lines.Add(#13);
+  memDisplay.Lines.Add('Places visited');
+  iCount:=0;
+  if cbxParis.Checked then
+    begin
+      memDisplay.Lines.Add('Paris');
+      iCount:=iCount+1;
+    end;
+  if cbxLondon.Checked then
+    begin
+      memDisplay.Lines.Add('London');
+      iCount:=iCount+1;
+    end;
+  if cbxRome.Checked then
+    begin
+      memDisplay.Lines.Add('Rome');
+      iCount:=iCount+1;
+    end;
+  memDisplay.Lines.Add(#13);
+  case iCount of
+    1:sCategory:='Occasional';
+    2:sCategory:='Frequent';
+    3:sCategory:='Avid'
+    else
+      sCategory:='Starter';
+  end;
+  memDisplay.Lines.Add('Traveller Type'+#9+#9+sCategory+#13);
+  memDisplay.Lines.Add(#13);
+  sAccType:=cmbType.Items[cmbType.ItemIndex];
+  if cmbType.ItemIndex<>-1 then
+    memDisplay.Lines.Add('Accomodation Type'+#9+#9+sAccType+#13);
+
+
+end;
+
+end.

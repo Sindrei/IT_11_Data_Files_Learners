@@ -1,0 +1,48 @@
+unit uSquareSquareRoot;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ComCtrls,Math;
+
+type
+  TfrmSquareSquareRoot = class(TForm)
+    edtNumber: TEdit;
+    lblNumber: TLabel;
+    redDisplay: TRichEdit;
+    btnCalculate: TButton;
+    procedure btnCalculateClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmSquareSquareRoot: TfrmSquareSquareRoot;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmSquareSquareRoot.btnCalculateClick(Sender: TObject);
+Var rNumber,rRoot:real;
+    iNum,i,iSquare,iCube:Integer;
+begin
+   iNum:= RandomRange(10,21);
+   edtNumber.Text:=IntToStr(iNum);
+   for I := 1 to iNum do
+   begin
+     iSquare:=Sqr(iNum);
+     iCube:= Power(iNum,3);
+     rRoot:=Sqrt(rNumber);
+     redDisplay.Paragraph.TabCount:=3;
+     redDisplay.Paragraph.Tab[0]:=50;
+     redDisplay.Paragraph.Tab[1]:=100;
+     redDisplay.Paragraph.Tab[2]:=150;
+     redDisplay.Lines.Add('Number'+#9+'Square'+#9+'Cube'+#9+'Square Root');
+     redDisplay.Lines.Add(IntToStr(iNum)+#9+intToStr(iSquare)+#9+IntToStr(iCube)+#9+FloatToStrF(rRoot,ffFixed,10,2));
+  end;
+
+end.

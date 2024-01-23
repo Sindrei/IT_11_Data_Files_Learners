@@ -1,0 +1,12 @@
+home team,away team,home score,away score
+Manchester United,Chelsea,6,1
+Chelsea,Manchester United,5,1
+Manchester United,Chelsea,5,1
+Manchester United,Chelsea,1,0
+Manchester United,Chelsea,3,1
+Chelsea,Manchester United,2,3
+Manchester United,Chelsea,4,2
+Chelsea,Manchester United,1,2
+Manchester United,Chelsea,4,1
+Manchester City,Liverpool,3,1
+Tottenham,Arsenal,1,10

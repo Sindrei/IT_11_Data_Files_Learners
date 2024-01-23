@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019-06-09 12:34:13.282.pas,C:\Users\Administrator.MVSS\Documents\RAD Studio\Projects\Unit1.pas=F:\Binary Search\BinarySearch_U.pas</Transaction>
+    <Transaction>2019-06-09 12:34:13.282.dfm,C:\Users\Administrator.MVSS\Documents\RAD Studio\Projects\Unit1.dfm=F:\Binary Search\BinarySearch_U.dfm</Transaction>
+    <Transaction>2019-06-09 12:34:18.556.dproj,C:\Users\Administrator.MVSS\Documents\RAD Studio\Projects\Project1.dproj=F:\Binary Search\BinarySearch_P.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

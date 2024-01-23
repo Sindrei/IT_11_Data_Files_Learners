@@ -1,0 +1,10 @@
+Bottled Water#72
+Fizzy Drink#45
+Small Chips#88
+Pie#53
+Energy Drink#93
+Chewing Gum#27
+Fruit Juice#21
+Burger#82
+Hot Dog#30
+Vitamin Juice#72

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/06/26 15:09:40.987.pas,C:\Users\Shani Nunkumar\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\Shani Nunkumar\Desktop\Chapter 5 Text Files Final Submission\Chapter 5 Data files Ans\Clients\Clients_u.pas</Transaction>
+    <Transaction>2019/06/26 15:09:40.987.dfm,C:\Users\Shani Nunkumar\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\Shani Nunkumar\Desktop\Chapter 5 Text Files Final Submission\Chapter 5 Data files Ans\Clients\Clients_u.dfm</Transaction>
+    <Transaction>2019/06/26 15:09:45.740.dproj,C:\Users\Shani Nunkumar\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\Shani Nunkumar\Desktop\Chapter 5 Text Files Final Submission\Chapter 5 Data files Ans\Clients\Clients_p.dproj</Transaction>
+    <Transaction>2019/06/26 18:41:00.433.dproj,C:\Users\Shani Nunkumar\Desktop\Chapter 5 Text Files Final Submission\Chapter 5 Data files Ans\Clients Delimited\Clients_p.dproj=C:\Users\Shani Nunkumar\Desktop\Chapter 5 Text Files Final Submission\Chapter 5 Data files Ans\Clients Delimited\ClientsDelimited_p.dproj</Transaction>
+    <Transaction>2019/06/26 18:41:14.868.pas,C:\Users\Shani Nunkumar\Desktop\Chapter 5 Text Files Final Submission\Chapter 5 Data files Ans\Clients Delimited\Clients_u.pas=C:\Users\Shani Nunkumar\Desktop\Chapter 5 Text Files Final Submission\Chapter 5 Data files Ans\Clients Delimited\ClientsDelimited_u.pas</Transaction>
+    <Transaction>2019/06/26 18:41:14.868.dfm,C:\Users\Shani Nunkumar\Desktop\Chapter 5 Text Files Final Submission\Chapter 5 Data files Ans\Clients Delimited\Clients_u.dfm=C:\Users\Shani Nunkumar\Desktop\Chapter 5 Text Files Final Submission\Chapter 5 Data files Ans\Clients Delimited\ClientsDelimited_u.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

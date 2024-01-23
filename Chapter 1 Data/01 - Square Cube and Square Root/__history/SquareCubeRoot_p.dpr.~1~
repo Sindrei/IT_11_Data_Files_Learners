@@ -1,0 +1,14 @@
+program pSquareSquareRoot;
+
+uses
+  Forms,
+  uSquareSquareRoot in 'uSquareSquareRoot.pas' {frmSquareSquareRoot};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmSquareSquareRoot, frmSquareSquareRoot);
+  Application.Run;
+end.

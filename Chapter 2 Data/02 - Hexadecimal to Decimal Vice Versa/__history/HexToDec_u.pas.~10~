@@ -1,0 +1,112 @@
+unit HexToDec_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TfrmHexToDec = class(TForm)
+    memDisplay: TMemo;
+    edtDecNumber: TEdit;
+    lblMsgDecimal: TLabel;
+    btnConvertDecToHex: TButton;
+    lblMsgHex: TLabel;
+    edtHexNumber: TEdit;
+    btnConvertHexToDec: TButton;
+    procedure FormActivate(Sender: TObject);
+    procedure btnConvertDecToHexClick(Sender: TObject);
+    procedure btnConvertHexToDecClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmHexToDec: TfrmHexToDec;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmHexToDec.btnConvertDecToHexClick(Sender: TObject);
+var i,j,iNum,iRemainder,iDecNum:Integer;
+    sHexNum,sHexDigit:string;
+begin
+   memDisplay.Lines.Clear;
+   memDisplay.Lines.Add('Decimal'+#9+'Hexadecimal');
+   iNum:=StrToInt(edtDecNumber.text);
+   for I := 1 to iNum do
+     begin
+       iDecNum:=i;
+       sHexNum:='';
+       repeat
+          iRemainder:=iDecNum mod 16;
+          sHexDigit:=IntToStr(iRemainder);
+          case iRemainder of
+             10:sHexDigit:='A';
+             11:sHexDigit:='B';
+             12:sHexDigit:='C';
+             13:sHexDigit:='D';
+             14:sHexDigit:='E';
+             15:sHexDigit:='F';
+          end;
+
+          sHexNum:=sHexDigit+sHexNum;
+          iDecNum:=iDecNum div 16;
+       until iDecNum=0;
+       memDisplay.Lines.Add(IntToStr(i)+#9+sHexNum);
+     end;
+
+end;
+
+procedure TfrmHexToDec.btnConvertHexToDecClick(Sender: TObject);
+var sHexNum,sHexDigit:string;
+    iIndex,i,j,iProd,iDecNum,iDigit:Integer;
+    cHexDigit :char;
+begin
+
+    sHexNum:=edtHexNumber.Text;
+    iIndex:=length(sHexNum);
+  	iDecNum:=0;
+  	for i:=1 to length (sHexNum) do
+  	begin
+  		cHexDigit:=sHexNum[i];
+      case sHexNum of
+         'A':sHexDigit:='10';
+         'B':sHexDigit:='11';
+         'C':sHexDigit:='12';
+         'D':sHexDigit:='13';
+         'E':sHexDigit:='14';
+         'F':sHexDigit:='15';
+         else
+          sHexDigit:=cHexDigit;
+      end;
+      iDigit:=StrToInt(sHexDigit);
+  		iIndex:=iIndex-1;
+  		if i=length(sHexNum) then
+  			iDecNum:=iDecNum + 1 * iDigit
+  		else
+  			begin
+  				 iProd:=1;
+  				 for j:= 1 to iIndex do
+  					 iProd:=iProd*16;
+  				iDecNum:=iDecNum+iDigit*iProd
+  	end;
+    end;
+  memDisplay.Lines.Add('Hexadecimal Number : '+sHexNum);
+ 	memDisplay.Lines.Add('Decimal Number: '+IntToStr(iDecNum));
+
+end;
+
+procedure TfrmHexToDec.FormActivate(Sender: TObject);
+begin
+  edtDecNumber.SetFocus;
+end;
+
+end.
+
+

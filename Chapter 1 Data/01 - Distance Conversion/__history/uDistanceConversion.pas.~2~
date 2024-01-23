@@ -1,0 +1,42 @@
+unit uDistanceConversion;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ComCtrls;
+
+type
+  TfrmDistanceConversion = class(TForm)
+    lblDistanceInches: TLabel;
+    edtInches: TEdit;
+    btnConvert: TButton;
+    redDisplay: TRichEdit;
+    procedure btnConvertClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmDistanceConversion: TfrmDistanceConversion;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmDistanceConversion.btnConvertClick(Sender: TObject);
+var rInches,rFeet,rYards,rMiles:Real;
+begin
+  rInches:=StrToInt(edtInches.Text);
+  rFeet:=rInches/12;
+  rYards:=rFeet/3;
+  rMiles:=rYards/1760;
+  redDisplay.Lines.Add('Inches'+#9+FloatToStr(rInches));
+  redDisplay.Lines.Add('Feet'+#9+FloatToStr(rFeet));
+  redDisplay.Lines.Add('Yards'+#9+FloatToStr(rYards));
+  redDisplay.Lines.Add('Miles'+#9+FloatToStr(rMiles));
+end;
+
+end.

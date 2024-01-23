@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/06/24 11:54:46.004.pas,C:\Users\rayan\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\rayan\Desktop\RAYAN DOCS\textbook\chapter 7\chapter 7 datafiles ans\FriendBook\FriendBookSignUp_U.pas</Transaction>
+    <Transaction>2019/06/24 11:54:46.004.dfm,C:\Users\rayan\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\rayan\Desktop\RAYAN DOCS\textbook\chapter 7\chapter 7 datafiles ans\FriendBook\FriendBookSignUp_U.dfm</Transaction>
+    <Transaction>2019/06/24 11:54:53.860.dproj,C:\Users\rayan\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\rayan\Desktop\RAYAN DOCS\textbook\chapter 7\chapter 7 datafiles ans\FriendBook\FriendBook_P.dproj</Transaction>
+    <Transaction>2019/06/24 12:08:22.762.pas,C:\Users\rayan\Desktop\RAYAN DOCS\textbook\chapter 7\chapter 7 datafiles ans\FriendBook\Unit1.pas=C:\Users\rayan\Desktop\RAYAN DOCS\textbook\chapter 7\chapter 7 datafiles ans\FriendBook\FriendBookLogin_U.pas</Transaction>
+    <Transaction>2019/06/24 12:08:22.762.dfm,C:\Users\rayan\Desktop\RAYAN DOCS\textbook\chapter 7\chapter 7 datafiles ans\FriendBook\Unit1.dfm=C:\Users\rayan\Desktop\RAYAN DOCS\textbook\chapter 7\chapter 7 datafiles ans\FriendBook\FriendBookLogin_U.dfm</Transaction>
+    <Transaction>2019/06/24 12:38:37.443.pas,C:\Users\rayan\Desktop\RAYAN DOCS\textbook\chapter 7\chapter 7 datafiles ans\FriendBook\Unit1.pas=C:\Users\rayan\Desktop\RAYAN DOCS\textbook\chapter 7\chapter 7 datafiles ans\FriendBook\FriendBookLogin_U.pas</Transaction>
+    <Transaction>2019/06/24 12:38:37.443.dfm,C:\Users\rayan\Desktop\RAYAN DOCS\textbook\chapter 7\chapter 7 datafiles ans\FriendBook\Unit1.dfm=C:\Users\rayan\Desktop\RAYAN DOCS\textbook\chapter 7\chapter 7 datafiles ans\FriendBook\FriendBookLogin_U.dfm</Transaction>
+    <Transaction>2019/06/24 21:11:13.383.pas,C:\Users\Shani Nunkumar\Desktop\Chapter 7 User Interface\Chapter 7 datafiles\FriendBook\FriendBookLogin_U.pas=</Transaction>
+    <Transaction>2019/06/24 21:11:13.383.dfm,C:\Users\Shani Nunkumar\Desktop\Chapter 7 User Interface\Chapter 7 datafiles\FriendBook\FriendBookLogin_U.dfm=</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="FriendBookSignUp_U.pas"/>
+    <File Path="FriendBookSignUp_U.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

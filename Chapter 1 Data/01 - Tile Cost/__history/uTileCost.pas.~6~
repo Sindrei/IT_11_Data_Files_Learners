@@ -1,0 +1,48 @@
+unit uTileCost;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ComCtrls,Math;
+
+type
+  TfrmTileCost = class(TForm)
+    lblDimension: TLabel;
+    edtLength: TEdit;
+    edtBreadth: TEdit;
+    lblLength: TLabel;
+    lblBreadth: TLabel;
+    btnTileCalculator: TButton;
+    redDisplay: TRichEdit;
+    procedure btnTileCalculatorClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmTileCost: TfrmTileCost;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmTileCost.btnTileCalculatorClick(Sender: TObject);
+var rLength,rBreadth,rArea,rTiles,rCost:Real;
+    iBoxes:integer;
+begin
+   redDisplay.Clear;
+   rLength:=StrToFloat(edtLength.Text);
+   rBreadth:=StrToFloat(edtBreadth.Text);
+   rArea:=rLength*rBreadth;
+   rTiles:=rArea*110/100;
+   iBoxes:=Ceil(rTiles/2.3);
+   rCost:=iBoxes * 2.3 *150;
+   redDisplay.Lines.Add('Tile Square metres'+#9+FloatToStr(rTiles));
+   redDisplay.Lines.Add('Boxes Required'+#9+IntToStr(iBoxes));
+   redDisplay.Lines.Add('Cost of Tiles'+#9+FloatToStrF(rCost,ffCurrency,10,2));
+end;
+
+end.

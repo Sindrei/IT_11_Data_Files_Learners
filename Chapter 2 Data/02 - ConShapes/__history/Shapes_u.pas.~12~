@@ -1,0 +1,62 @@
+unit Shapes_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TfrmShapes = class(TForm)
+    memDisplay: TMemo;
+    btnPattern1: TButton;
+    btnPattern2: TButton;
+    btnPattern3: TButton;
+    procedure btnPattern1Click(Sender: TObject);
+    procedure btnPattern2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmShapes: TfrmShapes;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmShapes.btnPattern1Click(Sender: TObject);
+var i,j,k,iNum:Integer;
+    sLine:string;
+begin
+ iNum:=1;
+  for i := 1 to 5 do
+    begin
+      sLine:='';
+      for j := 1 to iNum do
+        SLine:=sLine+'*'+' ';
+      memDisplay.Lines.Add(sLine);
+      iNum:=iNum+2;
+    end;
+end;
+
+procedure TfrmShapes.btnPattern2Click(Sender: TObject);
+var i,j,k,iSpace:Integer;
+    sLine:string;
+begin
+  iSpace:=4;
+  for i := 1 to 5 do
+    begin
+      sLine:='';
+      for k := 1 to iSpace do
+        sLine:=sLine+' ';
+      for j := 1 to i do
+        SLine:=sLine+'*'+' ';
+      memDisplay.Lines.Add(format('%10s',[sLine]));
+      iSpace:=iSpace-1;
+    end;
+end;
+
+end.

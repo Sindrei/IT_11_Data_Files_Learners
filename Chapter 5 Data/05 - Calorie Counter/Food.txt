@@ -1,0 +1,7 @@
+BigMac Burger,600
+Medium Pizza,1800
+Green Salad,50
+Coca Cola,150
+Chicken breast,250
+KFC,800
+125g Simba Chips,550

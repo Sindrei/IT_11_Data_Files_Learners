@@ -1,0 +1,14 @@
+program pLearnerAlphabet;
+
+uses
+  Forms,
+  uLearnerAlphabet in 'uLearnerAlphabet.pas' {frmLearnerAlphabet};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmLearnerAlphabet, frmLearnerAlphabet);
+  Application.Run;
+end.

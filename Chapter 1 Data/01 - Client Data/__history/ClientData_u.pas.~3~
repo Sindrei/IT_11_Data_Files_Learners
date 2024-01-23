@@ -1,0 +1,51 @@
+unit ClientData_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, Spin, jpeg;
+
+type
+  TForm1 = class(TForm)
+    lblName: TLabel;
+    edtName: TEdit;
+    lbSurname: TLabel;
+    edtSurname: TEdit;
+    lblAge: TLabel;
+    sedAge: TSpinEdit;
+    rgpGender: TRadioGroup;
+    grpPlacesVisited: TGroupBox;
+    cbxParis: TCheckBox;
+    cbxLondon: TCheckBox;
+    cbxRome: TCheckBox;
+    cmbType: TComboBox;
+    lblAccomodationType: TLabel;
+    lblPhoto: TLabel;
+    imgPhoto: TImage;
+    memDisplay: TMemo;
+    btnDisplay: TButton;
+    procedure btnDisplayClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnDisplayClick(Sender: TObject);
+var sSurname,sName:string;
+begin
+  sName:=edtName.Text;
+  sSurname:=edtSurname.Text;
+  memDisplay.Lines.Add('Name:'+#9#9+sName);
+  memDisplay.Lines.Add('Surname:'+#9#9+sSurname);
+end;
+
+end.

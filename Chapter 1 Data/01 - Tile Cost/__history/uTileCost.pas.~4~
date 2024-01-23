@@ -1,0 +1,44 @@
+unit uTileCost;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ComCtrls,Math;
+
+type
+  TfrmTileCost = class(TForm)
+    lblDimension: TLabel;
+    edtLength: TEdit;
+    edtBreadth: TEdit;
+    lblLength: TLabel;
+    lblBreadth: TLabel;
+    btnTileCalculator: TButton;
+    redDisplay: TRichEdit;
+    procedure btnTileCalculatorClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmTileCost: TfrmTileCost;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmTileCost.btnTileCalculatorClick(Sender: TObject);
+var rLength,rBreadth,rArea,rTiles,rCost:Real;
+    iBoxes:integer;
+begin
+   redDisplay.Clear;
+   rLength:=StrToFloat(edtLength.Text);
+   rBreadth:=StrToFloat(edtBreadth.Text);
+   rArea:=rLength*rBreadth;
+   rTiles:=rArea*110/100;
+   iBoxed:=Ceil(rTiles/
+end;
+
+end.

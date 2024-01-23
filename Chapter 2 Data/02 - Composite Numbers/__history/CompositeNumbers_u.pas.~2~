@@ -1,0 +1,42 @@
+unit CompositeNumbers_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TfrmCompositeNumbers = class(TForm)
+    memDisplay: TMemo;
+    btnFind: TButton;
+    procedure btnFindClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCompositeNumbers: TfrmCompositeNumbers;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmCompositeNumbers.btnFindClick(Sender: TObject);
+var
+  I,j,iCount : Integer;
+begin
+  for I := 1 to 29 do
+    begin
+      iCount:=2;
+      for j := 2 to i div 2 do
+         if i mod 2 = 0 then
+           iCount:=iCount+1;
+      if iCount>=3 then
+        memDisplay.Lines.Add(IntToStr(i));
+    end;
+end;
+
+end.

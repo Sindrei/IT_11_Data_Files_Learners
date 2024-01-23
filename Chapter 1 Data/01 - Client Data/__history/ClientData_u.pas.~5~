@@ -1,0 +1,66 @@
+unit ClientData_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, Spin, jpeg;
+
+type
+  TForm1 = class(TForm)
+    lblName: TLabel;
+    edtName: TEdit;
+    lbSurname: TLabel;
+    edtSurname: TEdit;
+    lblAge: TLabel;
+    sedAge: TSpinEdit;
+    rgpGender: TRadioGroup;
+    grpPlacesVisited: TGroupBox;
+    cbxParis: TCheckBox;
+    cbxLondon: TCheckBox;
+    cbxRome: TCheckBox;
+    cmbType: TComboBox;
+    lblAccomodationType: TLabel;
+    lblPhoto: TLabel;
+    imgPhoto: TImage;
+    memDisplay: TMemo;
+    btnDisplay: TButton;
+    procedure btnDisplayClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnDisplayClick(Sender: TObject);
+var sSurname,sName,sGender:string;
+    iAge,i:Integer;
+begin
+  sName:=edtName.Text;
+  sSurname:=edtSurname.Text;
+  iAge:=sedAge.Value;
+  if rgpGender.ItemIndex=0 then
+      sGender:='Male';
+  if rgpGender.ItemIndex=1 then
+      sGender:='Female';
+  memDisplay.Lines.Add('Name:'+#9#9+sName);
+  memDisplay.Lines.Add('Surname:'+#9#9+sSurname);
+  memDisplay.Lines.Add('Age:'+#9#9+IntToStr(iAge));
+  memDisplay.Lines.Add('Gender:'+#9#9+sGender);
+  memDisplay.Lines.Add('Places visited');
+  if cbxParis.Checked then
+    memDisplay.Lines.Add('Paris');
+  if cbxLondon.Checked then
+    memDisplay.Lines.Add('London');
+  if cbxRome.Checked then
+    memDisplay.Lines.Add('Rome');
+end;
+
+end.

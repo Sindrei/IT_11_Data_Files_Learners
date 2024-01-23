@@ -1,0 +1,42 @@
+unit uSquareSquareRoot;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ComCtrls;
+
+type
+  TfrmSquareSquareRoot = class(TForm)
+    edtNumber: TEdit;
+    lblNumber: TLabel;
+    redDisplay: TRichEdit;
+    btnCalculate: TButton;
+    procedure btnCalculateClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmSquareSquareRoot: TfrmSquareSquareRoot;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmSquareSquareRoot.btnCalculateClick(Sender: TObject);
+Var rNumber,rSquare,rRoot:real;
+begin
+   rNumber:=StrToFloat(edtNumber.Text);
+   rSquare:=Sqr(rNumber);
+   rRoot:=Sqrt(rNumber);
+   redDisplay.Paragraph.TabCount:=2;
+   redDisplay.Paragraph.Tab[0]:=50;
+   redDisplay.Paragraph.Tab[1]:=100;
+   redDisplay.Lines.Add('Number'+#9+'Square'+#9+'Square Root');
+   redDisplay.Lines.Add(FloatToStr(rNumber)+#9+FloatToStr(rSquare)+#9+FloatToStr(rRoot));
+end;
+
+end.

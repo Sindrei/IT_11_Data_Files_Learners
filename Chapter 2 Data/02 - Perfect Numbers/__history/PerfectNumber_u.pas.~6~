@@ -1,0 +1,51 @@
+unit PerfectNumber_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TfrmPerfectNumber = class(TForm)
+    memDisplay: TMemo;
+    btnCalculate: TButton;
+    procedure btnCalculateClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPerfectNumber: TfrmPerfectNumber;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPerfectNumber.btnCalculateClick(Sender: TObject);
+var iCount,iNum,iSum,i,j:Integer;
+begin
+  memDisplay.Lines.Clear;
+  memDisplay.Lines.Add('First 4 perfect numbers');
+  iCount:=0;
+  iNum:=1;
+  repeat
+    iSum:=0;
+    for i := 1 to iNum div 2 do
+      begin
+        if iNum mod i=0 then
+          isum:=iSum+i;
+      end;
+    if iSum=iNum then
+      begin
+         memDisplay.Lines.Add(IntToStr(iNum));
+         iCount:=iCount+1;
+      end;
+    iNum:=iNum+1;
+
+  until iCount=4 ;
+end;
+
+end.

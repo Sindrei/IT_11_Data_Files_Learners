@@ -1,0 +1,59 @@
+unit DecimalToBinary_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    memDisplay: TMemo;
+    edtNumber: TEdit;
+    lblMsgBinary: TLabel;
+    btnConvertBinToDec: TButton;
+    procedure FormActivate(Sender: TObject);
+    procedure btnConvertBinToDecClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnConvertBinToDecClick(Sender: TObject);
+var i,j,iNum,iRemainder,iDecNum:Integer;
+    sBinNum:string;
+begin
+   memDisplay.Lines.Clear;
+   memDisplay.Lines.Add(Format('%10s',['Decimal']));
+   iNum:=StrToInt(edtNumber.text);
+   for I := 1 to iNum do
+     begin
+       iDecNum:=i;
+       sBinNum:='';
+       repeat
+          iRemainder:=iDecNum mod 2;
+          sBinNum:=IntToStr(iRemainder)+sBinNum;
+          iDecNum:=iDecNum div 2;
+       until iDecNum=0;
+       memDisplay.Lines.Add(IntToStr(i)+#9+sBinNum);
+     end;
+
+end;
+
+procedure TForm1.FormActivate(Sender: TObject);
+begin
+  edtNumber.SetFocus;
+end;
+
+end.
+
+

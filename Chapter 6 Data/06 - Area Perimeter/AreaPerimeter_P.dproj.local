@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/06/18 11:15:03.261.pas,C:\Users\rayan\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\rayan\Desktop\Example\AreaPerimeter_U.pas</Transaction>
+    <Transaction>2019/06/18 11:15:03.280.dfm,C:\Users\rayan\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\rayan\Desktop\Example\AreaPerimeter_U.dfm</Transaction>
+    <Transaction>2019/06/18 11:15:12.243.dproj,C:\Users\rayan\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\rayan\Desktop\Example\AreaPerimeter_P.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

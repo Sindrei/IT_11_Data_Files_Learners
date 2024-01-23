@@ -1,0 +1,71 @@
+unit MultiplicationTester_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TfrmMultiplicationTester = class(TForm)
+    lblNumQuestions: TLabel;
+    edtNumQuestions: TEdit;
+    lblNum1: TLabel;
+    lblNum2: TLabel;
+    edtNum1: TEdit;
+    edtNum2: TEdit;
+    memDisplay: TMemo;
+    btnTester: TButton;
+    procedure btnTesterClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMultiplicationTester: TfrmMultiplicationTester;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmMultiplicationTester.btnTesterClick(Sender: TObject);
+var i,iNum1,iNum2,iPoints,iQuestions,iCount,iAns,iProd:Integer;
+    bFlag:Boolean;
+begin
+  iQuestions:=StrToInt(edtNumQuestions.text);
+  iPoints:=0;
+  for i := 1 to iQuestions do
+    begin
+      iNum1:=Random(10)+1;
+      iNum2:=Random(10)+1;
+      edtNum1.Text:= IntToStr(iNum1);
+      edtNum2.Text:= IntToStr(iNum2);
+      iCount:=0;
+      bFlag:=False;
+      iProd:=iNum1*iNum2;
+      repeat
+         iCount:=iCount+1;
+         iAns:=StrToInt(InputBox('Enter answer',IntToStr(iNum1)+'*'+IntToStr(iNum2),''));
+         if iAns=iProd then
+           begin
+             bFlag:=True;
+             ShowMessage('Correct');
+             if iCount=1 then
+              iPoints:=ipoints+4
+             else
+              iPoints:=iPoints+2;
+           end
+           else
+            begin
+              ShowMessage('Incorrect');
+            end;
+      until (iCount=2) or (bFlag=true) ;
+    end;
+
+    memDisplay.Lines.Add('Total Points: '+IntToStr(iPoints));
+
+end;
+
+end.

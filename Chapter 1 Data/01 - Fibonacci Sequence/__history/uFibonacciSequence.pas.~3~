@@ -1,0 +1,38 @@
+unit uFibonacciSequence;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ComCtrls;
+
+type
+  TfrmFibonacciSequence = class(TForm)
+    Button1: TButton;
+    redDisplay: TRichEdit;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmFibonacciSequence: TfrmFibonacciSequence;
+
+implementation
+
+{$R *.dfm}
+var iTerm1,iTerm2: integer;
+    sOutput:String;
+
+procedure TfrmFibonacciSequence.FormCreate(Sender: TObject);
+begin
+  sOutput:='';
+  iTerm1:=StrToInt(InputBox('First Term','Enter first term',''));
+  iTerm2:=StrToInt(InputBox('Second Term','Enter second term',''));
+  sOutput:=sOutput+iTerm1+#9+iTerm2;
+  redDisplay.Lines.Add(sOutput);
+end;
+
+end.

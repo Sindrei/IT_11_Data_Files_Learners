@@ -1,0 +1,50 @@
+unit multiplicationTableFormat_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, StdCtrls;
+
+type
+  TfrmMultiplicationTable = class(TForm)
+    btnCalculate: TButton;
+    memOutput: TMemo;
+    procedure btnCalculateClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMultiplicationTable: TfrmMultiplicationTable;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmMultiplicationTable.btnCalculateClick(Sender: TObject);
+var
+  sLine,sColHeading
+   : String;
+  i, j, iValue : Integer;
+begin
+  sColHeading:=#9;
+  for I := 0 to 12 do
+    sColHeading:=sColHeading+IntToStr(i)+#9;
+  sColHeading:=sColHeading+#13;
+  memOutput.Lines.Add(sColHeading);
+  for i := 1 to 12 do
+  begin
+    sLine := '';
+    for j := 1 to 12 do
+    begin
+      iValue := i * j;
+      sLine := sLine + IntToStr(iValue) + #9;
+    end;
+    memOutput.Lines.Add(sLine);
+  end;
+end;
+
+end.

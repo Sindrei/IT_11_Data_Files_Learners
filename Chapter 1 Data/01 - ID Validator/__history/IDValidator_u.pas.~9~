@@ -1,0 +1,92 @@
+unit IDValidator_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    pnlDisplay1: TPanel;
+    pnlDisplay2: TPanel;
+    edtDOB: TEdit;
+    cmbGender: TComboBox;
+    edtID: TEdit;
+    btnValidateId: TButton;
+    pnlDisplay3: TPanel;
+    lblID: TLabel;
+    cmbCitizen: TComboBox;
+    lbl1Citizen: TLabel;
+    lblGender: TLabel;
+    lblBirthDate: TLabel;
+    lblTitle: TLabel;
+    lblResult: TLabel;
+    lblDisplay: TLabel;
+    memdisplay: TMemo;
+    procedure btnValidateIdClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnValidateIdClick(Sender: TObject);
+var sBirthDate,sID,sDOB,sGen:string;
+    iStringLen,i,iGen:Integer;
+    bCheck1,bCheck2,bCheck3:Boolean;
+begin
+ bCheck1:=False;
+ bCheck2:=False;
+ bCheck3:=False;
+ sBirthDate:=edtDOB.Text;
+ sID:=edtID.Text;
+ iStringLen:=Length(sID);
+
+ sDob:='';
+ for i := 1 to 6 do
+    sDOB:=sDOB+sID[i];
+
+ if sDOB=sBirthDate then
+   bCheck1:=True;
+
+ if bCheck1 then
+   memdisplay.Lines.Add('DOB is valid');
+ sGen:='';
+ for i := 7 to 10 do
+   sGen:=sGen+sID[i];
+ iGen:=StrToInt(sGen);
+ if (iGen<5000) and (cmbGender.ItemIndex=0) then
+   bCheck2:=True
+ else
+    if (iGen>=5000) and (cmbGender.ItemIndex=1) then
+      bCheck2:=True;
+
+  if bCheck2 then
+   memdisplay.Lines.Add('Gender is valid');
+
+ if (sID[11]='8') and (cmbCitizen.ItemIndex=0) then
+      bCheck3:=True
+ else
+    if (sID[11]='1') and (cmbCitizen.ItemIndex=1) then
+      bCheck3:=True;
+
+ if bCheck3 then
+   memdisplay.Lines.Add('Citizen is correct');
+
+ if bCheck1 and bCheck2 and bCheck3 then
+    lblDisplay.Caption:='ID No is valid'
+ else
+    lblDisplay.Caption:='ID NO is not valid'
+
+
+end;
+
+end.

@@ -1,0 +1,56 @@
+unit FibonacciSequence_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ComCtrls;
+
+type
+  TfrmFibonacciSequence = class(TForm)
+    btnCalculate: TButton;
+    redDisplay: TRichEdit;
+    lblTerm1: TLabel;
+    lblTerm2: TLabel;
+    edtTerm1: TEdit;
+    edtTerm2: TEdit;
+    procedure btnCalculateClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmFibonacciSequence: TfrmFibonacciSequence;
+
+implementation
+
+{$R *.dfm}
+
+
+procedure TfrmFibonacciSequence.btnCalculateClick(Sender: TObject);
+var iTerm1,iTerm2,iCount,iSum,iterm3:Integer;
+    sLine:string;
+begin
+   iTerm1:=StrToInt(edtTerm1.Text);
+   iTerm2:=StrToInt(edtTerm2.text);
+   redDisplay.Lines.Add('Fibonacci Sequence');
+   sLine:= IntToStr(iTerm1)+'  '+IntToStr(iTerm2)+'  ';
+   iSum:=iTerm1+iTerm2;
+   iCount:=2;
+   while iSum<=100 do
+    begin
+      iTerm3:=iTerm1+iTerm2;
+      sLine:=sLine+inttostr(iterm3)+'  ';
+      iSum:=iSum+iTerm3;
+      iCount:=iCount+1;
+      iTerm1:=iTerm2;
+      iTerm2:=iterm3;
+    end;
+    redDisplay.Lines.Add(sLine);
+    redDisplay.Lines.Add('Number of terms: '+IntToStr(iCount));
+    redDisplay.Lines.Add('Sum='+IntToStr(isum));
+end;
+
+end.

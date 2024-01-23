@@ -1,0 +1,44 @@
+unit IsolateDigits_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TfrmIsolateDigits = class(TForm)
+    lblMessage: TLabel;
+    edtNumber: TEdit;
+    btnIsolateDigitsM1: TButton;
+    btnIsolateDigitsM2: TButton;
+    memDisplay: TMemo;
+    procedure btnIsolateDigitsM1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmIsolateDigits: TfrmIsolateDigits;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmIsolateDigits.btnIsolateDigitsM1Click(Sender: TObject);
+var sDigits:string;
+    iNumber,iRemainder:Integer;
+begin
+  sDigits:='';
+  iNumber:=StrToInt(edtNumber.Text);
+  repeat
+     iRemainder:=iNumber mod 10;
+     sDigits:=IntToStr(iRemainder)+#13#10+sDigits;
+     iNumber:=iNumber div 10;
+  until (iNumber=0);
+  memDisplay.Lines.Add(sDigits);
+end;
+
+end.

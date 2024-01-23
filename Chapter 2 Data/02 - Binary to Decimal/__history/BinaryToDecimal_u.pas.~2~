@@ -1,0 +1,53 @@
+unit BinaryToDecimal_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    memDisplay: TMemo;
+    edtNumber: TEdit;
+    lblMsgBinary: TLabel;
+    btnConvertBinToDec: TButton;
+    procedure btnConvertBinToDecClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnConvertBinToDecClick(Sender: TObject);
+var sBinNum:string;
+    iIndex,i,j,iProd,iDecNum,iDigit:Integer;
+begin
+    sBinNum:=edtNumber.Text;
+    iIndex=length(sBinNum);
+  	iDecNum:=0;
+  	for i:=1 to length (sBinNum) do
+  	begin
+  		iDigit:=StrToInt(sBinNum[i]);
+  		iIndex:=iIndex-1;
+  		if i=length(sBinNum) then
+  			iDecNum:=iDecNum + 1 * iDigit
+  		else
+  			begin
+  				 iProd:=1;
+  				 for j:= 1 to iIndex do
+  					 iProd:=iProd*2;
+  				iDecNum:=iDecNum+iDigit*iProd
+  	end;
+ 	memDisplay.Lines.Add(IntToStr(iDecNum));
+
+end;
+
+end.

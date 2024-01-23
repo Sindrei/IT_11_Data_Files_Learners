@@ -1,0 +1,91 @@
+unit ConShapes_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TfrmShapes = class(TForm)
+    memDisplay: TMemo;
+    btnPattern1: TButton;
+    btnPattern2: TButton;
+    btnPattern3: TButton;
+    procedure btnPattern1Click(Sender: TObject);
+    procedure btnPattern2Click(Sender: TObject);
+    procedure btnPattern3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmShapes: TfrmShapes;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmShapes.btnPattern1Click(Sender: TObject);
+var i,j:Integer;
+    sLine:string;
+begin
+  memDisplay.Lines.Clear;
+  for I := 1 to 4 do
+    begin
+      SLine:='';
+      for j := i to 4 do
+        sLine:=sLine+IntToStr(j)+' ';
+      memDisplay.Lines.Add(sLine);
+    end;
+end;
+
+procedure TfrmShapes.btnPattern2Click(Sender: TObject);
+var i,j,iNum:Integer;
+    sLine:string;
+begin
+  memDisplay.Lines.Clear;
+  for i := 1 to 5 do
+    begin
+      if i mod 2=0 then
+        begin
+           iNum:=5;
+           sLine:=' '; // a space
+        end
+        else
+          begin
+            iNum:=6;
+           sLine:=''; // null string
+          end;
+
+      for j := 1 to iNum do
+        sLine:=sLine+'*'+' ';
+      memDisplay.Lines.Add(sLine);
+    end;
+end;
+
+procedure TfrmShapes.btnPattern3Click(Sender: TObject);
+var
+  I,j,iNum: Integer;
+  sLine:string;
+begin
+ memDisplay.Lines.Clear;
+  for I := 1 to 6 do
+    begin
+      sLine:='';
+      for j := 1 to i do
+        sLine:=sLine+'* ';
+      memDisplay.Lines.Add(Format('%20s',[sLine]));
+    end;
+  {for i := 1 to 6 do
+    begin
+      sLine:='';
+      for j := 1 to i do
+        SLine:=sLine+'*'+' ';
+      memDisplay.Lines.Add(Format('%-15s',[sLine]));
+    end; }
+end;
+
+end.
