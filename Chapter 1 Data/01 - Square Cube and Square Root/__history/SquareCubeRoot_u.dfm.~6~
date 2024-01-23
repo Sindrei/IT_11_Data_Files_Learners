@@ -2,8 +2,8 @@ object frmSquareCubeRoot: TfrmSquareCubeRoot
   Left = 0
   Top = 0
   Caption = 'Finding Square, Cube and Square Root'
-  ClientHeight = 199
-  ClientWidth = 439
+  ClientHeight = 201
+  ClientWidth = 447
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

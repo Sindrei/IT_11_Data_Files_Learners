@@ -38,12 +38,8 @@ begin
     'Square Root');
   for iX := 1 to iRandom do
   begin
-    iSquare := SQR(iX);
-    rCube := Power(iX, 3);
-    rSquareRoot := Sqrt(iX);
-    redDisplay.Lines.Add(inttostr(iX) + #9 + inttostr(iSquare) + #9 +
-      FloatToStrF(rCube, ffNumber, 8, 2) + #9 + FloatToStrF(rSquareRoot,
-      ffNumber, 8, 2));
+    iSquare :=
+
   end;
 
 end;

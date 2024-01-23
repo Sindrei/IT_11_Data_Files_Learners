@@ -1,0 +1,38 @@
+unit SquareCubeRoot_u;
+
+interface
+
+uses Vcl.ComCtrls, Vcl.Controls, System.Classes,
+  Winapi.Windows, Winapi.Messages, SysUtils, Variants, Graphics, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TfrmSquareCubeRoot = class(TForm)
+    edtNumber: TEdit;
+    lblNumber: TLabel;
+    redDisplay: TRichEdit;
+    btnCalculate: TButton;
+    procedure btnCalculateClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmSquareCubeRoot: TfrmSquareCubeRoot;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmSquareCubeRoot.btnCalculateClick(Sender: TObject);
+var
+  iRandom: Integer; // declare variable
+begin
+  iRandom := Random(20 - 10 + 1) + 10; // creates a random value from 1 to 20
+  edtNumber.Text := (inttostr(iRandom));
+
+end;
+
+end.
