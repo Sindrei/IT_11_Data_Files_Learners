@@ -1,4 +1,4 @@
-unit uCircleAreaCircumference;
+unit CircleAreaCircumference_u;
 
 interface
 
@@ -27,14 +27,16 @@ implementation
 {$R *.dfm}
 
 procedure TfrmCircleAreaCircumference.btnCalculateClick(Sender: TObject);
-var rRadius,rArea,rCircum:real;
+var
+  rRadius, rArea, rCircumference: Real;
 begin
-   rRadius:=StrToFloat(edtRadius.Text);
-   rArea:= PI * sqr(rRadius);
-   rCircum:=2 * Pi * rRadius;
-   redDisplay.Lines.Add('Radius'+#9+#9+FloatToStrF(rRadius,ffFixed,8,2));
-   redDisplay.Lines.Add('Area'+#9+#9+FloatToStrF(rArea,ffFixed,8,2));
-   redDisplay.Lines.Add('Circumference'+#9+FloatToStrF(rCircum,ffFixed,8,2));
+  rRadius := strtofloat(edtRadius.Text);
+  rArea := Pi * sqr(rRadius);
+  rCircumference := 2 * Pi * rRadius;
+
+  redDisplay.Lines.Add('Radius: ' + #9 + FloatToStrF(rRadius, ffFixed, 8, 2));
+  redDisplay.Lines.Add('Area: ' + #9 + FloatToStrF(rArea, ffFixed, 8, 2));
+  redDisplay.Lines.Add('Circumference: ' + #9 + FloatToStrF(rCircumference, ffFixed, 8, 2));
 end;
 
 end.

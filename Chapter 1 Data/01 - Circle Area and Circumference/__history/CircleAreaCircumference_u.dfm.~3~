@@ -11,7 +11,6 @@ object frmCircleAreaCircumference: TfrmCircleAreaCircumference
   Font.Name = 'Tahoma'
   Font.Style = []
   Position = poScreenCenter
-  OnCreate = FormCreate
   TextHeight = 13
   object lblRadius: TLabel
     Left = 24

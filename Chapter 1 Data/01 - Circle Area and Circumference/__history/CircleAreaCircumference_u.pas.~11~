@@ -43,7 +43,6 @@ end;
 
 procedure TfrmCircleAreaCircumference.FormCreate(Sender: TObject);
 begin
-  // Neatly format output into columns
   redDisplay.Paragraph.TabCount := 1;
   redDisplay.Paragraph.Tab[0] := 100;
 end;
