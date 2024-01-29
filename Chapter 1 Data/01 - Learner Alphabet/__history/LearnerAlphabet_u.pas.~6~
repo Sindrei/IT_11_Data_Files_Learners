@@ -11,7 +11,6 @@ type
     Button1: TButton;
     redDisplay: TRichEdit;
     procedure Button1Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,20 +25,12 @@ implementation
 {$R *.dfm}
 
 var
-  iNum: integer;
-  cLetter: char;
+  iNum: integer = 1;
+  cLetter: char = 'z';
 
 procedure TfrmLearnerAlphabet.Button1Click(Sender: TObject);
 begin
   redDisplay.Lines.Add('Learner: ' + IntToStr(iNum) + #9 + cLetter);
-  inc(iNum);
-  Dec(cLetter, 2);
-end;
-
-procedure TfrmLearnerAlphabet.FormCreate(Sender: TObject);
-begin
-  iNum := 1;
-  cLetter := 'Z';
 end;
 
 end.
