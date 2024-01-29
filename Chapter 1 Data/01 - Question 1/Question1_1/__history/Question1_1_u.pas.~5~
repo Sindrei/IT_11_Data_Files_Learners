@@ -41,8 +41,7 @@ var
   rPrice: Real;
 begin
   // 1.1.2 Add code here
-  rPrice := rArea * 3.15;
-  lblAmount.Caption := FloatToStrF(rPrice, ffCurrency, 8, 2)
+  rPrice := ra
 end;
 
 procedure TForm1.btnCalcAreaClick(Sender: TObject);
