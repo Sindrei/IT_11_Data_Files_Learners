@@ -40,12 +40,12 @@ begin
   iBiscuits := spnShort.Value;
   iPackets := iBiscuits DIV 5;
   rIncome := iPackets * 7.50;
-  rProfit := 30 - iPackets;
+  rProfit := iPackets - 30;
 
   memOutput.Lines.Add('Blocks of Shortbread: ' + #9 + IntToStr(iBiscuits));
   memOutput.Lines.Add('Packets of Shortbread: ' + #9 + IntToStr(iPackets));
-  memOutput.Lines.Add('Income: ' + #9#9#9 + FloatToStrF(rIncome, ffCurrency, 8, 2));
-  memOutput.Lines.Add('Profit: ' + #9#9#9 + FloatToStrF(rProfit, ffCurrency, 8, 2));
+  memOutput.Lines.Add('Income: ' + #9 + FloatToStrF(rIncome, ffCurrency, 8, 2));
+  memOutput.Lines.Add('Profit: ' + #9 + FloatToStrF(rProfit, ffCurrency, 8, 2));
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
