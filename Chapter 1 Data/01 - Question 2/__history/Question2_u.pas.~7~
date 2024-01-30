@@ -75,15 +75,9 @@ begin
     rTotal := rTotal - rDiscount
   end;
 
-  memOut.Lines.Clear;
   memOut.Lines.Add('Registration Details: ' + #9#9 +
     FormatDateTime('yyyy/mm/dd', Now));
-  memOut.Lines.Add('The Adult Ticket price is: ' + FloatToStrF(rAdults,
-    ffCurrency, 8, 2));
-  memOut.Lines.Add('The Kids Ticket price is: ' + FloatToStrF(rKids,
-    ffCurrency, 8, 2));
-  memOut.Lines.Add('The Total Ticket Price is: ' + FloatToStrF(rTotal,
-    ffCurrency, 8, 2));
+
 end;
 
 end.
