@@ -73,4 +73,5 @@ begin
   iCount := 0;
   rTotal := 0;
 end;
+
 end.

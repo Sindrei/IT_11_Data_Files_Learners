@@ -44,7 +44,7 @@ object frmDelimitedText: TfrmDelimitedText
     Width = 345
     Height = 41
     TabOrder = 1
-    Text = 'The Hobbit#114,5'
+    Text = 'The Hobbit#114.5'
   end
   object memBook: TMemo
     Left = 8

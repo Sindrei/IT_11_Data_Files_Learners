@@ -30,6 +30,8 @@ type
 
 var
   frmDelimitedText: TfrmDelimitedText;
+  iNumBooks: integer = 0;
+  rTotalPrice: real = 0;
 
 implementation
 
@@ -53,17 +55,17 @@ begin
   memBook.Lines.Add(sBook);
   memPrice.Lines.Add(FloatToStrF(rPrice, ffCurrency, 8, 2));
 
-  iCount := iCount + 1;
-  rTotal := rTotal + rPrice;
+  iNumBooks := iNumBooks + 1;
+  rTotalPrice := rTotalPrice + rPrice;
 end;
 
 procedure TfrmDelimitedText.btnSummaryClick(Sender: TObject);
 begin
   // 3.1.2 Summary output
   memBook.Lines.Add('-----------------------');
-  memBook.Lines.Add('Number of Books: ' + IntToStr(iCount));
+  memBook.Lines.Add('Number of Books: ' + IntToStr(iNumBooks));
   memPrice.Lines.Add('-----------------------');
-  memPrice.Lines.Add('Total Cost: ' + FloatToStrF(rTotal,
+  memPrice.Lines.Add('Total Cost: ' + FloatToStrF(rTotalPrice,
     ffCurrency, 8, 2));
 end;
 
@@ -73,4 +75,5 @@ begin
   iCount := 0;
   rTotal := 0;
 end;
+
 end.
