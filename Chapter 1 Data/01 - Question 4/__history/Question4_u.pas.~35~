@@ -42,7 +42,6 @@ var
   iY: Integer;
 begin
   // Question 4.2
-  memOutput.Clear;
   iSide := StrToInt(edtSide.Text);
   for iY := 1 to iSide do
   begin

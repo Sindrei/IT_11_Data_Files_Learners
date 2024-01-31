@@ -10,8 +10,10 @@ object frmQuestion4: TfrmQuestion4
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
+  PixelsPerInch = 96
   TextHeight = 13
   object pnlMain: TPanel
     Left = 0
@@ -28,8 +30,6 @@ object frmQuestion4: TfrmQuestion4
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 349
-    ExplicitHeight = 491
     object edtPalin: TLabeledEdit
       Left = 24
       Top = 73
@@ -45,7 +45,6 @@ object frmQuestion4: TfrmQuestion4
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      Text = ''
     end
     object btnTest: TButton
       Left = 24
@@ -71,7 +70,6 @@ object frmQuestion4: TfrmQuestion4
       Font.Style = []
       ParentFont = False
       TabOrder = 2
-      Text = ''
     end
     object memOutput: TMemo
       Left = 24

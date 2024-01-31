@@ -42,7 +42,6 @@ var
   iY: Integer;
 begin
   // Question 4.2
-  memOutput.Clear;
   iSide := StrToInt(edtSide.Text);
   for iY := 1 to iSide do
   begin
@@ -51,7 +50,7 @@ begin
     begin
       if iY MOD 2 <> 0 then
       begin
-        if iX MOD 2 <> 0 then
+        if iX MOD 2 = 0 then
         begin
           sRow := sRow + 'X ';
         end
@@ -60,7 +59,7 @@ begin
       end
       else
       begin
-        if iX MOD 2 = 0 then
+        if iX MOD 2 <> 0 then
         begin
           sRow := sRow + 'X ';
         end
@@ -75,12 +74,6 @@ end;
 procedure TfrmQuestion4.btnResetClick(Sender: TObject);
 begin
   // Question 4.3
-  edtPalin.Clear;
-  edtSide.Clear;
-  memOutput.Clear;
-  edtSide.Enabled := false;
-  btnDraw.Enabled := false;
-  edtPalin.SetFocus;
 end;
 
 procedure TfrmQuestion4.btnTestClick(Sender: TObject);
