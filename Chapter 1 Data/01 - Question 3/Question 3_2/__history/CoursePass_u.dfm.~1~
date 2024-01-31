@@ -10,6 +10,8 @@ object frmCoursePass: TfrmCoursePass
   Font.Height = -16
   Font.Name = 'Tahoma'
   Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
   TextHeight = 19
   object Panel1: TPanel
     Left = 0
@@ -18,8 +20,6 @@ object frmCoursePass: TfrmCoursePass
     Height = 277
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 71
-    ExplicitWidth = 298
     object Label1: TLabel
       Left = 16
       Top = 16
@@ -110,8 +110,6 @@ object frmCoursePass: TfrmCoursePass
     Height = 72
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 298
-    ExplicitHeight = 71
     object Label8: TLabel
       Left = 24
       Top = 28

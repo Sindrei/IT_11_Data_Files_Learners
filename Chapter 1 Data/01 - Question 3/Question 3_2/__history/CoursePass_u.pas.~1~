@@ -1,6 +1,5 @@
 unit CoursePass_u;
-
-// Add Name and Surname
+ //Add Name and Surname
 interface
 
 uses
@@ -37,41 +36,21 @@ implementation
 {$R *.dfm}
 
 procedure TfrmCoursePass.btnCheckPassClick(Sender: TObject);
-var
-  iCooking, iPresentation, iProf: Integer;
 begin
   // 3.2.2
-  iCooking := spnCook.Value;
-  iPresentation := spnPres.Value;
-  iProf := spnProf.Value;
 
-  if ((iCooking >= 80) AND (iPresentation > 60)) OR
-    ((iProf >= 80) AND ((iCooking > 50) AND (iPresentation > 50))) then
-  begin
-    lblCheckPass.Caption := 'Pass';
-  end
-  else
-  begin
-    lblCheckPass.Caption := 'Fail';
-  end;
+//  if {complete} then
+//  begin
+//    lblCheckPass.Caption := 'Pass';
+//  end else
+//  begin
+//   lblCheckPass.Caption := 'Fail';
+//  end;
 end;
 
 procedure TfrmCoursePass.edtNameExit(Sender: TObject);
-var
-  sName: String;
-  iX: Integer;
 begin
-  // Validate Name
-  sName := edtName.Text;
-  for iX := 1 to length(sName) do
-  begin
-    if NOT(sName[iX] IN ['A' .. 'Z', 'a' .. 'z', ' ', '-']) then
-    begin
-      showMessage('Illegal characters used');
-      edtName.SetFocus;
-      break
-    end;
-  end;
+  //Validate Name
 end;
 
 end.

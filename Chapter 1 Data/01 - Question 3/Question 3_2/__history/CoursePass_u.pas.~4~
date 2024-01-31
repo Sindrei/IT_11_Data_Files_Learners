@@ -37,23 +37,16 @@ implementation
 {$R *.dfm}
 
 procedure TfrmCoursePass.btnCheckPassClick(Sender: TObject);
-var
-  iCooking, iPresentation, iProf: Integer;
 begin
   // 3.2.2
-  iCooking := spnCook.Value;
-  iPresentation := spnPres.Value;
-  iProf := spnProf.Value;
 
-  if ((iCooking >= 80) AND (iPresentation > 60)) OR
-    ((iProf >= 80) AND ((iCooking > 50) AND (iPresentation > 50))) then
-  begin
-    lblCheckPass.Caption := 'Pass';
-  end
-  else
-  begin
-    lblCheckPass.Caption := 'Fail';
-  end;
+  // if {complete} then
+  // begin
+  // lblCheckPass.Caption := 'Pass';
+  // end else
+  // begin
+  // lblCheckPass.Caption := 'Fail';
+  // end;
 end;
 
 procedure TfrmCoursePass.edtNameExit(Sender: TObject);
@@ -69,8 +62,8 @@ begin
     begin
       showMessage('Illegal characters used');
       edtName.SetFocus;
-      break
     end;
+
   end;
 end;
 

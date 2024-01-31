@@ -41,12 +41,9 @@ var
   iCooking, iPresentation, iProf: Integer;
 begin
   // 3.2.2
-  iCooking := spnCook.Value;
-  iPresentation := spnPres.Value;
-  iProf := spnProf.Value;
 
-  if ((iCooking >= 80) AND (iPresentation > 60)) OR
-    ((iProf >= 80) AND ((iCooking > 50) AND (iPresentation > 50))) then
+  if (iCooking >= 80 AND iPresentation > 60) OR
+    (iProf >= 80 AND iCooking > 50 AND iPresentation > 50) then
   begin
     lblCheckPass.Caption := 'Pass';
   end
