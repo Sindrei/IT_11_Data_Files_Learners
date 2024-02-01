@@ -49,7 +49,7 @@ begin
     sRow := '';
     for iX := 1 to iSide do
     begin
-      if iY MOD 2 <> 0 then
+      if iY MOD 2 <> 0 then // checks if row is odd
       begin
         if iX MOD 2 <> 0 then
         begin
@@ -58,7 +58,7 @@ begin
         else
           sRow := sRow + 'O ';
       end
-      else
+      else // if row number is even
       begin
         if iX MOD 2 = 0 then
         begin
