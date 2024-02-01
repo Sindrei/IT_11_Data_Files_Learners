@@ -45,7 +45,7 @@ begin
   for j := 1 to iSide do
   begin
     sRow := '';
-    if j MOD 2 <> 0 then // odd row
+    if j MOD 2 <> 0 then
     begin
       for i := 1 to iSide do
       begin
@@ -55,11 +55,11 @@ begin
           sRow := sRow + ' ' + 'O';
       end;
     end
-    else  // even row
+    else
     begin
       for i := 1 to iSide do
       begin
-        if i MOD 2 = 0 then // even index number
+        if i MOD 2 = 0 then
           sRow := sRow + ' ' + 'X'
         else
           sRow := sRow + ' ' + 'O';

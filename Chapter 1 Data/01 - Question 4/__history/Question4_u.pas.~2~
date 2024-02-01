@@ -35,38 +35,8 @@ implementation
 {$R *.dfm}
 
 procedure TfrmQuestion4.btnDrawClick(Sender: TObject);
-var
-  i, j, iSide: Integer;
-  sRow: String;
 begin
   // Question 4.2
-  iSide := strtoint(edtSide.Text);
-
-  for j := 1 to iSide do
-  begin
-    sRow := '';
-    if j MOD 2 <> 0 then // odd row
-    begin
-      for i := 1 to iSide do
-      begin
-        if i MOD 2 <> 0 then
-          sRow := sRow + ' ' + 'X'
-        else
-          sRow := sRow + ' ' + 'O';
-      end;
-    end
-    else  // even row
-    begin
-      for i := 1 to iSide do
-      begin
-        if i MOD 2 = 0 then // even index number
-          sRow := sRow + ' ' + 'X'
-        else
-          sRow := sRow + ' ' + 'O';
-      end;
-    end;
-    memOutput.Lines.Add(sRow);
-  end;
 end;
 
 procedure TfrmQuestion4.btnResetClick(Sender: TObject);

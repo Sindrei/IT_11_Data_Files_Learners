@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, ExtCtrls, Vcl.Mask;
+  Dialogs, StdCtrls, ExtCtrls;
 
 type
   TfrmQuestion4 = class(TForm)
@@ -35,54 +35,25 @@ implementation
 {$R *.dfm}
 
 procedure TfrmQuestion4.btnDrawClick(Sender: TObject);
-var
-  i, j, iSide: Integer;
-  sRow: String;
 begin
-  // Question 4.2
-  iSide := strtoint(edtSide.Text);
-
-  for j := 1 to iSide do
-  begin
-    sRow := '';
-    if j MOD 2 <> 0 then // odd row
-    begin
-      for i := 1 to iSide do
-      begin
-        if i MOD 2 <> 0 then
-          sRow := sRow + ' ' + 'X'
-        else
-          sRow := sRow + ' ' + 'O';
-      end;
-    end
-    else  // even row
-    begin
-      for i := 1 to iSide do
-      begin
-        if i MOD 2 = 0 then // even index number
-          sRow := sRow + ' ' + 'X'
-        else
-          sRow := sRow + ' ' + 'O';
-      end;
-    end;
-    memOutput.Lines.Add(sRow);
-  end;
+ // Question 4.2
 end;
 
 procedure TfrmQuestion4.btnResetClick(Sender: TObject);
 begin
-  // Question 4.3
+ // Question 4.3
 end;
 
 procedure TfrmQuestion4.btnTestClick(Sender: TObject);
 begin
-  // Question 4.1
+ // Question 4.1
 end;
 
 procedure TfrmQuestion4.FormCreate(Sender: TObject);
 begin
-  edtSide.Enabled := True;
-  btnDraw.Enabled := True;
+  edtSide.Enabled := false;
+  btnDraw.Enabled := False;
 end;
 
 end.
+
