@@ -31,13 +31,17 @@ var
 
 procedure TfrmLearnerAlphabet.Button1Click(Sender: TObject);
 var
-iInput : Integer;
+  iInput: integer;
 begin
-  iInput := StrToInt(InputBox('Learner Total','Enter the amount of learners,', '0'))
+  iInput := StrToInt(InputBox('Learner Total',
+    'Enter the amount of learners,', '0'));
 
-  redDisplay.Lines.Add('Learner: ' + inttostr(iNum) + #9 + cLetter);
-  Inc(iNum);
-  Dec(cLetter, 2);
+  for iNum := 1 to iInput do
+  begin
+    redDisplay.Lines.Add('Learner: ' + inttostr(iNum) + #9 + cLetter);
+    Dec(cLetter, 2);
+  end;
+
 end;
 
 procedure TfrmLearnerAlphabet.FormCreate(Sender: TObject);

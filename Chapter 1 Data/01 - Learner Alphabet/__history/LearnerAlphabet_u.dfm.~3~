@@ -20,7 +20,6 @@ object frmLearnerAlphabet: TfrmLearnerAlphabet
     Height = 25
     Caption = 'Generate'
     TabOrder = 0
-    OnClick = Button1Click
   end
   object redDisplay: TRichEdit
     Left = 24
@@ -32,6 +31,8 @@ object frmLearnerAlphabet: TfrmLearnerAlphabet
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
+    Lines.Strings = (
+      '')
     ParentFont = False
     ScrollBars = ssVertical
     TabOrder = 1

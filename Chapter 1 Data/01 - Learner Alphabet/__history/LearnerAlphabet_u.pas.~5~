@@ -30,14 +30,8 @@ var
   cLetter: char;
 
 procedure TfrmLearnerAlphabet.Button1Click(Sender: TObject);
-var
-iInput : Integer;
 begin
-  iInput := StrToInt(InputBox('Learner Total','Enter the amount of learners,', '0'))
-
   redDisplay.Lines.Add('Learner: ' + inttostr(iNum) + #9 + cLetter);
-  Inc(iNum);
-  Dec(cLetter, 2);
 end;
 
 procedure TfrmLearnerAlphabet.FormCreate(Sender: TObject);
