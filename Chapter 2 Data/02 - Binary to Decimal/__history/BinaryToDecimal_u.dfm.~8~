@@ -24,6 +24,8 @@ object Form1: TForm1
     Top = 8
     Width = 209
     Height = 201
+    Lines.Strings = (
+      '')
     TabOrder = 0
   end
   object edtNumber: TEdit

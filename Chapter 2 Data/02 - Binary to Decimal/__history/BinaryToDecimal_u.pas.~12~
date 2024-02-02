@@ -30,21 +30,17 @@ implementation
 procedure TForm1.btnConvertBinToDecClick(Sender: TObject);
 var
   sBinary: String;
-  i, iIndex: Integer;
-  rNum, rDecimal: Real;
+  i, iNum, iIndex, iDecimal: Integer;
+  rNum : Real;
 begin
   iIndex := 0;
-  rDecimal := 0;
   sBinary := edtNumber.Text;
   for i := length(sBinary) downto 1 do
   begin
-    rNum := strtoint(sBinary[i]) * power(2, iIndex);
-    memDisplay.Lines.Add(FloatToStr(rNum));
-    rDecimal := rDecimal + rNum;
-    Inc(iIndex);
+    rNum := strtoint(sBinary[i]) * power(2,iIndex);
+
   end;
-  memDisplay.Lines.Add('Decimal number: ' + FloatToStrF(rDecimal,
-    ffNumber, 8, 0));
+
 end;
 
 end.

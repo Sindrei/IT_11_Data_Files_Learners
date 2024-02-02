@@ -12,7 +12,7 @@ type
     edtNumber: TEdit;
     lblMsgBinary: TLabel;
     btnConvertBinToDec: TButton;
-    procedure FormActivate(Sender: TObject);
+    procedure btnConvertBinToDecClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -27,11 +27,18 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm1.FormActivate(Sender: TObject);
+procedure TForm1.btnConvertBinToDecClick(Sender: TObject);
+var
+  sBinary: String;
+  i, iNum: Integer;
 begin
-  edtNumber.SetFocus;
+  sBinary := edtNumber.Text;
+  for i := length(sBinary) - 1 downto 0 do
+  begin
+    iNum := strtoint(sBinary[i]);
+    memDisplay.Lines.Add(IntToStr(iNum))
+  end;
+
 end;
 
 end.
-
-

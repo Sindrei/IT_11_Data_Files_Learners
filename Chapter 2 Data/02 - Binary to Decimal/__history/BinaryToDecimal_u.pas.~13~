@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls;
+  Dialogs, StdCtrls, math;
 
 type
   TForm1 = class(TForm)
@@ -12,6 +12,8 @@ type
     edtNumber: TEdit;
     lblMsgBinary: TLabel;
     btnConvertBinToDec: TButton;
+    procedure btnConvertBinToDecClick(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -24,5 +26,21 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm1.btnConvertBinToDecClick(Sender: TObject);
+var
+  sBinary: String;
+  i, iIndex, iDecimal: Integer;
+  rNum : Real;
+begin
+  iIndex := 0;
+  sBinary := edtNumber.Text;
+  for i := length(sBinary) downto 1 do
+  begin
+    rNum := strtoint(sBinary[i]) * power(2,iIndex);
+
+  end;
+
+end;
 
 end.
