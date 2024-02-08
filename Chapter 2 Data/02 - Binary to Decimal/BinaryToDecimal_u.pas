@@ -39,7 +39,7 @@ begin
   for i := length(sBinary) downto 1 do
   begin
     rNum := strtoint(sBinary[i]) * power(2, iIndex);
-    memDisplay.Lines.Add(FloatToStr(rNum));
+    //memDisplay.Lines.Add(FloatToStr(rNum));
     rDecimal := rDecimal + rNum;
     Inc(iIndex);
   end;

@@ -2,17 +2,15 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Convert Decimal to Binary'
-  ClientHeight = 231
-  ClientWidth = 505
+  ClientHeight = 230
+  ClientWidth = 501
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 13
   object lblDecNumber: TLabel
     Left = 8
@@ -31,8 +29,6 @@ object Form1: TForm1
     Font.Height = -11
     Font.Name = 'Courier New'
     Font.Style = []
-    Lines.Strings = (
-      '')
     ParentFont = False
     TabOrder = 0
   end
@@ -50,5 +46,6 @@ object Form1: TForm1
     Height = 41
     Caption = 'Convert To Binary'
     TabOrder = 2
+    OnClick = btnConvertDecToHexClick
   end
 end
