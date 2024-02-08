@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, System.Math;
+  Dialogs, StdCtrls;
 
 type
   TForm1 = class(TForm)
@@ -34,14 +34,12 @@ var
   iIndex, i, iNum: Integer;
 begin
   sBinaryNum := edtNumber.Text;
-  iIndex := 0;
   for i := Length(sBinaryNum) downto 1 do
   begin
     iNum := StrToInt(sBinaryNum[i]);
-    rDecimal := rDecimal + (iNum * Power(2, iIndex));
-    Inc(iIndex);
+    memDisplay.Lines.Add(IntToStr(iNum));
   end;
-  memDisplay.Lines.Add(IntToStr(Trunc(rDecimal)));
+
 end;
 
 end.
