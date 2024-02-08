@@ -10,9 +10,7 @@ object frmMultiplicationTable: TfrmMultiplicationTable
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 13
   object btnCalculate: TButton
     Left = 8
@@ -21,6 +19,7 @@ object frmMultiplicationTable: TfrmMultiplicationTable
     Height = 26
     Caption = 'Calculate'
     TabOrder = 0
+    OnClick = btnCalculateClick
   end
   object memOutput: TMemo
     Left = 8
