@@ -10,10 +10,8 @@ object frmHexToDec: TfrmHexToDec
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnActivate = FormActivate
-  PixelsPerInch = 96
   TextHeight = 13
   object lblMsgDecimal: TLabel
     Left = 8
@@ -39,8 +37,6 @@ object frmHexToDec: TfrmHexToDec
     Font.Height = -11
     Font.Name = 'Courier New'
     Font.Style = []
-    Lines.Strings = (
-      '')
     ParentFont = False
     ScrollBars = ssVertical
     TabOrder = 0
@@ -74,5 +70,6 @@ object frmHexToDec: TfrmHexToDec
     Height = 41
     Caption = 'Convert to Dec'
     TabOrder = 4
+    OnClick = btnConvertHexToDecClick
   end
 end
