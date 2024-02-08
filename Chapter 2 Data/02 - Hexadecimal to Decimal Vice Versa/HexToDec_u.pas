@@ -17,6 +17,7 @@ type
     btnConvertHexToDec: TButton;
     procedure FormActivate(Sender: TObject);
     procedure btnConvertHexToDecClick(Sender: TObject);
+    procedure btnConvertDecToHexClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -31,10 +32,49 @@ implementation
 
 {$R *.dfm}
 
+procedure TfrmHexToDec.btnConvertDecToHexClick(Sender: TObject);
+var
+  iDecNumber, iRemainder: Integer;
+  sHexadecimalNumber, sRemainder: String;
+begin
+  iDecNumber := StrToInt(edtDecNumber.Text);
+  iRemainder := 0;
+  sHexadecimalNumber := '';
+
+  repeat
+    iRemainder := iDecNumber MOD 16;
+    iDecNumber := iDecNumber DIV 16;
+
+    case iRemainder of
+      10:
+        sRemainder := 'A';
+      11:
+        sRemainder := 'B';
+      12:
+        sRemainder := 'C';
+      13:
+        sRemainder := 'D';
+      14:
+        sRemainder := 'E';
+      15:
+        sRemainder := 'F';
+    else
+      sRemainder := IntToStr(iRemainder)
+
+    end;
+
+    sHexadecimalNumber := sRemainder + sHexadecimalNumber;
+
+    // memDisplay.Lines.Add(IntToStr(iDecNumber) + ' rem ' + IntToStr(iRemainder));
+  until (iDecNumber = 0);
+  memDisplay.Lines.Add('Decimal Number: ' + edtDecNumber.Text);
+  memDisplay.Lines.Add('Hexadecimal Number: ' + sHexadecimalNumber);
+end;
+
 procedure TfrmHexToDec.btnConvertHexToDecClick(Sender: TObject);
 var
   sHexaDecimal, sNum: string;
-  i, index, iNum: integer;
+  i, index, iNum: Integer;
   rDecimal: Real;
 begin
   sHexaDecimal := edtHexNumber.Text;

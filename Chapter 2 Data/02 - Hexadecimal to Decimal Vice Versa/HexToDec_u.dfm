@@ -55,6 +55,7 @@ object frmHexToDec: TfrmHexToDec
     Height = 41
     Caption = 'Convert To Hex'
     TabOrder = 2
+    OnClick = btnConvertDecToHexClick
   end
   object edtHexNumber: TEdit
     Left = 176
