@@ -31,11 +31,11 @@ implementation
 
 procedure TfrmCryptographer.btnEncryptClick(Sender: TObject);
 Var
-  sCharacterList, sChar, sText, sOutput: String;
+  sCharacterList, sChar, sText, sOutput, sNumber: String;
   i, j, iPos, iNumber: Integer;
 begin
   sOutput := '';
-  sCharacterList := 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?:-+="()[]';
+  sCharacterList := 'ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789.,!?:-+="()[]';
 
   case rgpCipher.ItemIndex of
     0:
@@ -57,13 +57,30 @@ begin
     1:
       begin
         sText := edtDecrypt.Text;
+        sNumber := '';
+        iNumber := 0;
+
         for i := 1 to length(sText) do
         begin
-
+          if (sText[i] <> ' ') then
+            sNumber := sNumber + sText[i]
+          else
+          begin
+            iNumber := StrToInt(sNumber) + 5;
+            for j := 1 to length(sCharacterList) do
+            begin
+              // ShowMessage(IntToStr(iNumber));
+              if iNumber = j then
+              begin
+                sOutput := sOutput + sCharacterList[j];
+              end;
+              sNumber := '';
+            end;
+          end; // else
         end;
-
+        memDisplay.Lines.Add('Crypted Message ' + sText);
+        memDisplay.Lines.Add('Decrypted Message ' + sOutput);
       end;
-
   end;
 
 end;
