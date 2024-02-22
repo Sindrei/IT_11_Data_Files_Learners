@@ -1,0 +1,45 @@
+unit ConShapes_u;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TfrmShapes = class(TForm)
+    memDisplay: TMemo;
+    btnPattern1: TButton;
+    btnPattern2: TButton;
+    btnPattern3: TButton;
+    procedure btnPattern1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmShapes: TfrmShapes;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmShapes.btnPattern1Click(Sender: TObject);
+var
+  i, j: Integer;
+  sLine: String;
+begin
+  for i := 1 to 4 do
+  begin
+    sLine := '';
+    for j := i to 4 do
+    begin
+      sLine := sLine + inttostr(j);
+    end;
+    memDisplay.Lines.Add(sLine);
+  end;
+end;
+
+end.
