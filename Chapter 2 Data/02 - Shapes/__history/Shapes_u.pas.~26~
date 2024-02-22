@@ -81,10 +81,10 @@ begin
     sLine := '';
     for J := 1 to I do
     begin
-      sLine := sLine + IntToStr(iCount) + ' ';
+      sLine := sLine + IntToStr(iCount);
       Inc(iCount);
     end;
-    memDisplay.Lines.Add(sLine);
+
   end;
 end;
 

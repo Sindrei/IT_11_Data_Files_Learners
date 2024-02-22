@@ -72,19 +72,12 @@ end;
 
 procedure TfrmShapes.btnPattern3Click(Sender: TObject);
 var
-  I, J, iCount: Integer;
+  I, J: Integer;
   sLine: String;
 begin
-  iCount := 1;
   for I := 1 to 5 do
   begin
-    sLine := '';
-    for J := 1 to I do
-    begin
-      sLine := sLine + IntToStr(iCount) + ' ';
-      Inc(iCount);
-    end;
-    memDisplay.Lines.Add(sLine);
+
   end;
 end;
 

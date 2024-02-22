@@ -15,7 +15,6 @@ type
     procedure FormCreate(Sender: TObject);
     procedure btnPattern1Click(Sender: TObject);
     procedure btnPattern2Click(Sender: TObject);
-    procedure btnPattern3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -68,24 +67,6 @@ begin
     memDisplay.Lines.Add(sLine);
   end;
 
-end;
-
-procedure TfrmShapes.btnPattern3Click(Sender: TObject);
-var
-  I, J, iCount: Integer;
-  sLine: String;
-begin
-  iCount := 1;
-  for I := 1 to 5 do
-  begin
-    sLine := '';
-    for J := 1 to I do
-    begin
-      sLine := sLine + IntToStr(iCount) + ' ';
-      Inc(iCount);
-    end;
-    memDisplay.Lines.Add(sLine);
-  end;
 end;
 
 procedure TfrmShapes.FormCreate(Sender: TObject);

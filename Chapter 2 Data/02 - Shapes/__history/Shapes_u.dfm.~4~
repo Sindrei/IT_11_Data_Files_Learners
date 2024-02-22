@@ -36,7 +36,6 @@ object frmShapes: TfrmShapes
     Height = 25
     Caption = 'Pattern 2'
     TabOrder = 2
-    OnClick = btnPattern2Click
   end
   object btnPattern3: TButton
     Left = 416
@@ -45,6 +44,5 @@ object frmShapes: TfrmShapes
     Height = 25
     Caption = 'Pattern 3'
     TabOrder = 3
-    OnClick = btnPattern3Click
   end
 end
