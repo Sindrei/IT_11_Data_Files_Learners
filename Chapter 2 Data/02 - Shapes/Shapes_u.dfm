@@ -2,17 +2,16 @@ object frmShapes: TfrmShapes
   Left = 0
   Top = 0
   Caption = 'Creating Shapes'
-  ClientHeight = 320
-  ClientWidth = 592
+  ClientHeight = 319
+  ClientWidth = 588
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
+  OnCreate = FormCreate
   TextHeight = 13
   object memDisplay: TMemo
     Left = 40
@@ -28,6 +27,7 @@ object frmShapes: TfrmShapes
     Height = 25
     Caption = 'Pattern 1'
     TabOrder = 1
+    OnClick = btnPattern1Click
   end
   object btnPattern2: TButton
     Left = 416
@@ -36,6 +36,7 @@ object frmShapes: TfrmShapes
     Height = 25
     Caption = 'Pattern 2'
     TabOrder = 2
+    OnClick = btnPattern2Click
   end
   object btnPattern3: TButton
     Left = 416
@@ -44,5 +45,6 @@ object frmShapes: TfrmShapes
     Height = 25
     Caption = 'Pattern 3'
     TabOrder = 3
+    OnClick = btnPattern3Click
   end
 end
