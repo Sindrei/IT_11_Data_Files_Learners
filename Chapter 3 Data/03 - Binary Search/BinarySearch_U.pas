@@ -64,6 +64,9 @@ var
   iSearchValue, ilowerBound, iMidPoint, iUpperBound, iPos: Integer;
 begin
   // Search
+  btnSortClick(btnSearch);
+  btnDisplayClick(btnSearch);
+
   iSearchValue := StrToInt(InputBox('Search', 'Enter a number:', '0'));
   ilowerBound := 1;
   iUpperBound := Length(arrNumbers);
