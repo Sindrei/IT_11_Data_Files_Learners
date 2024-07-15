@@ -10,8 +10,7 @@ object frmAreaPerimeter: TfrmAreaPerimeter
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
+  OnCreate = FormCreate
   TextHeight = 13
   object redDisplay: TRichEdit
     Left = 8
@@ -33,6 +32,7 @@ object frmAreaPerimeter: TfrmAreaPerimeter
     Height = 33
     Caption = 'Read'
     TabOrder = 1
+    OnClick = btnReadClick
   end
   object btnCostGrass: TButton
     Left = 336
@@ -41,6 +41,7 @@ object frmAreaPerimeter: TfrmAreaPerimeter
     Height = 33
     Caption = 'Lay Grass Cost'
     TabOrder = 2
+    OnClick = btnCostGrassClick
   end
   object btnCostFence: TButton
     Left = 336
@@ -49,6 +50,7 @@ object frmAreaPerimeter: TfrmAreaPerimeter
     Height = 33
     Caption = 'Fence Property Cost'
     TabOrder = 3
+    OnClick = btnCostFenceClick
   end
   object btnTotalCost: TButton
     Left = 336
@@ -57,5 +59,6 @@ object frmAreaPerimeter: TfrmAreaPerimeter
     Height = 33
     Caption = 'Total Cost'
     TabOrder = 4
+    OnClick = btnTotalCostClick
   end
 end

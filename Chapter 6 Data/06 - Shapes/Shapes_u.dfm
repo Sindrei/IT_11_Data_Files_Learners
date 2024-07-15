@@ -10,9 +10,7 @@ object frmShapes: TfrmShapes
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 13
   object redShape: TRichEdit
     Left = 8
@@ -24,8 +22,6 @@ object frmShapes: TfrmShapes
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
-    Lines.Strings = (
-      '')
     ParentFont = False
     TabOrder = 0
   end
@@ -36,5 +32,6 @@ object frmShapes: TfrmShapes
     Height = 25
     Caption = 'Create'
     TabOrder = 1
+    OnClick = btnCreateClick
   end
 end

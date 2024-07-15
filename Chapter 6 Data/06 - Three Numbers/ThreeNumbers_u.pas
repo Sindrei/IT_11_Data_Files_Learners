@@ -17,12 +17,14 @@ type
     lblNum2: TLabel;
     lblNum3: TLabel;
     procedure btnDetermineClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
     procedure SumofNumbers;
     procedure Highest;
     procedure Line;
-
+    procedure SwapColour;
+    procedure Smallest;
 
   public
     { Public declarations }
@@ -30,37 +32,41 @@ type
 
 var
   frmThreeNumbers: TfrmThreeNumbers;
-  iNum1,iNum2,iNum3:Integer;
-  sDisplay:string;
+  iNum1, iNum2, iNum3: Integer;
+  sDisplay: string;
+
 implementation
 
 {$R *.dfm}
 
-
-
 procedure TfrmThreeNumbers.btnDetermineClick(Sender: TObject);
 begin
-  iNum1:=StrToInt(edtNum1.Text);
-  iNum2:=StrToInt(edtNum2.Text);
-  iNum3:=StrToInt(edtNum3.Text);
-  SumOfNumbers;
+  iNum1 := StrToInt(edtNum1.Text);
+  iNum2 := StrToInt(edtNum2.Text);
+  iNum3 := StrToInt(edtNum3.Text);
+  SumofNumbers;
   Line;
   Highest;
   Line;
+  SwapColour;
+end;
+
+procedure TfrmThreeNumbers.FormCreate(Sender: TObject);
+begin
+  frmThreeNumbers.Color := clBlack;
 end;
 
 procedure TfrmThreeNumbers.Highest;
-var iLarge:Integer;
+var
+  iLarge: Integer;
 begin
-  if (iNum1>iNum2) and (iNum1>iNum3) then
-    ilarge:=iNum1
+  if (iNum1 > iNum2) and (iNum1 > iNum3) then
+    iLarge := iNum1
+  else if iNum2 > iNum3 then
+    iLarge := iNum2
   else
-    if iNum2>iNum3 then
-      iLarge:=iNum2
-    else
-      iLarge:=iNum3;
-  sDisplay:='Highest Number: '+IntToStr(iLarge);
-
+    iLarge := iNum3;
+  sDisplay := 'Highest Number: ' + IntToStr(iLarge);
 end;
 
 procedure TfrmThreeNumbers.Line;
@@ -69,16 +75,34 @@ begin
   redResults.Lines.Add('===========================');
 end;
 
-
-
 procedure TfrmThreeNumbers.SumofNumbers;
-var iSum:Integer;
+var
+  iSum: Integer;
 begin
-  iSum:=iNum1+iNum2+iNum3;
-  sDisplay:='Sum: '+IntToStr(iSum);
+  iSum := iNum1 + iNum2 + iNum3;
+  sDisplay := 'Sum: ' + IntToStr(iSum);
 
 end;
 
+procedure TfrmThreeNumbers.SwapColour;
+begin
+  if frmThreeNumbers.Color = clBlack then
+    frmThreeNumbers.Color := clWhite
+  else
+    frmThreeNumbers.Color := clBlack;
+end;
 
+procedure TfrmThreeNumbers.Smallest;
+var
+  iSmall: Integer;
+begin
+  if (iNum1 < iNum2) and (iNum1 < iNum3) then
+    iSmall := iNum1
+  else if iNum2 < iNum3 then
+    iSmall := iNum2
+  else
+    iSmall := iNum3;
+  sDisplay := 'Smallest Number: ' + IntToStr(iSmall);
+end;
 
 end.
