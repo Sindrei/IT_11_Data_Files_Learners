@@ -10,9 +10,7 @@ object frmWordCompetition: TfrmWordCompetition
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 13
   object lblWord1: TLabel
     Left = 48
@@ -53,7 +51,7 @@ object frmWordCompetition: TfrmWordCompetition
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object edWord1: TEdit
+  object edtWord1: TEdit
     Left = 24
     Top = 40
     Width = 121
@@ -74,13 +72,14 @@ object frmWordCompetition: TfrmWordCompetition
     Height = 21
     TabOrder = 2
   end
-  object btn1Results: TButton
+  object btnResults: TButton
     Left = 344
     Top = 136
     Width = 97
     Height = 33
     Caption = 'Results'
     TabOrder = 3
+    OnClick = btnResultsClick
   end
   object redDisplay: TRichEdit
     Left = 24
