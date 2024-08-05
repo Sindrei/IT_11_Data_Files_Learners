@@ -4,7 +4,9 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ComCtrls, StdCtrls, Keyboard, ExtCtrls, Grids, DBGrids, conFriendBook;
+  Dialogs, ComCtrls, StdCtrls, Keyboard, ExtCtrls, Grids, DBGrids,
+  conFriendBook,
+  Data.DB, Data.Win.ADODB;
 
 type
   TfrmFriendBook = class(TForm)
@@ -39,7 +41,7 @@ implementation
 
 procedure TfrmFriendBook.btnCreateClick(Sender: TObject);
 begin
- // Create
+  // Create
 
 end;
 
@@ -51,14 +53,14 @@ end;
 
 procedure TfrmFriendBook.btnDeleteClick(Sender: TObject);
 begin
- // Delete
+  // Delete
 
 end;
 
 procedure TfrmFriendBook.FormShow(Sender: TObject);
 begin
   // Form Show Tasks
-
+  // DBGrid1.DataSource := conFriendBook.dbmFB.dscFriends;
 end;
 
 end.

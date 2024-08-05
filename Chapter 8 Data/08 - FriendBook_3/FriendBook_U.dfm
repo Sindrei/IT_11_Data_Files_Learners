@@ -11,9 +11,7 @@ object frmFriendBook: TfrmFriendBook
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 16
@@ -67,8 +65,8 @@ object frmFriendBook: TfrmFriendBook
     Top = 311
     Width = 114
     Height = 41
-    Date = 43639.533326354170000000
-    Time = 43639.533326354170000000
+    Date = 43639.000000000000000000
+    Time = 0.533326354168821100
     TabOrder = 0
   end
   object edtClass: TEdit
@@ -129,5 +127,18 @@ object frmFriendBook: TfrmFriendBook
     Caption = 'Delete Profile'
     TabOrder = 6
     OnClick = btnDeleteClick
+  end
+  object dbgFriends: TDBGrid
+    Left = 16
+    Top = 64
+    Width = 707
+    Height = 138
+    TabOrder = 7
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    OnCellClick = dbgFriendsCellClick
   end
 end

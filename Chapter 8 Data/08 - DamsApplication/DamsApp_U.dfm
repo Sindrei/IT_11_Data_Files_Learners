@@ -11,9 +11,7 @@ object frmDams: TfrmDams
   Font.Height = -11
   Font.Name = 'Arial'
   Font.Style = [fsBold]
-  OldCreateOrder = False
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 14
   object Label1: TLabel
     Left = 24
@@ -59,8 +57,6 @@ object frmDams: TfrmDams
     Top = 352
     Width = 305
     Height = 171
-    Lines.Strings = (
-      'redOut')
     ReadOnly = True
     TabOrder = 2
   end

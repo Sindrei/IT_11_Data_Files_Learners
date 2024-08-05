@@ -11,9 +11,7 @@ object frmFriendBook: TfrmFriendBook
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 16
@@ -67,8 +65,8 @@ object frmFriendBook: TfrmFriendBook
     Top = 311
     Width = 114
     Height = 41
-    Date = 43639.533326354170000000
-    Time = 43639.533326354170000000
+    Date = 43639.000000000000000000
+    Time = 0.533326354168821100
     TabOrder = 0
   end
   object edtClass: TEdit
