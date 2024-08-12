@@ -4,16 +4,14 @@ object frmShop: TfrmShop
   BorderStyle = bsToolWindow
   Caption = 'Shop App'
   ClientHeight = 472
-  ClientWidth = 834
+  ClientWidth = 841
   Color = clWhite
   Font.Charset = ANSI_CHARSET
   Font.Color = clBlack
   Font.Height = -11
   Font.Name = 'Arial'
   Font.Style = [fsBold]
-  OldCreateOrder = False
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 14
   object Label1: TLabel
     Left = 24
@@ -67,8 +65,6 @@ object frmShop: TfrmShop
     Top = 216
     Width = 305
     Height = 233
-    Lines.Strings = (
-      'redOut')
     ReadOnly = True
     TabOrder = 2
   end
