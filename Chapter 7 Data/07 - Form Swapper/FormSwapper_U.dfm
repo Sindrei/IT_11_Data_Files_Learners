@@ -10,8 +10,7 @@ object frmYellow: TfrmYellow
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
+  OnClose = FormClose
   TextHeight = 13
   object Label1: TLabel
     Left = 160
@@ -33,5 +32,13 @@ object frmYellow: TfrmYellow
     Height = 25
     Caption = 'MOVE TO GREEN FORM'
     TabOrder = 0
+    OnClick = btnNewScreenClick
+  end
+  object edtInput: TEdit
+    Left = 192
+    Top = 184
+    Width = 121
+    Height = 21
+    TabOrder = 1
   end
 end
