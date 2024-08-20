@@ -10,9 +10,7 @@ object frmDynamicComponents: TfrmDynamicComponents
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 13
   object btnCreate: TButton
     Left = 368
@@ -21,5 +19,6 @@ object frmDynamicComponents: TfrmDynamicComponents
     Height = 185
     Caption = 'Create a Button'
     TabOrder = 0
+    OnClick = btnCreateClick
   end
 end
