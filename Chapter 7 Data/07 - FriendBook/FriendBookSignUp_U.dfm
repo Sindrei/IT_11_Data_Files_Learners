@@ -2,17 +2,15 @@ object frmSignUp: TfrmSignUp
   Left = 0
   Top = 0
   Caption = 'SIGN UP'
-  ClientHeight = 649
-  ClientWidth = 321
+  ClientHeight = 650
+  ClientWidth = 314
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
     Left = 14
@@ -900,17 +898,19 @@ object frmSignUp: TfrmSignUp
     ParentFont = False
   end
   object lblReturnLogin: TLabel
-    Left = 16
+    Left = 8
     Top = 625
-    Width = 273
+    Width = 298
     Height = 16
-    Caption = 'Click here to return to return to the Login  Form'
+    Alignment = taCenter
+    Caption = 'Click here to return to the Login  Form'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlue
     Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
+    OnClick = lblReturnLoginClick
   end
   object edtName: TEdit
     Left = 14
@@ -980,7 +980,7 @@ object frmSignUp: TfrmSignUp
   object btnSignUp: TButton
     Left = 8
     Top = 572
-    Width = 291
+    Width = 298
     Height = 31
     Caption = 'SIGN UP'
     Font.Charset = DEFAULT_CHARSET
@@ -990,5 +990,6 @@ object frmSignUp: TfrmSignUp
     Font.Style = []
     ParentFont = False
     TabOrder = 5
+    OnClick = btnSignUpClick
   end
 end
