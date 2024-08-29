@@ -3,7 +3,7 @@ object frmShop: TfrmShop
   Top = 0
   BorderStyle = bsToolWindow
   Caption = 'Shop App'
-  ClientHeight = 472
+  ClientHeight = 486
   ClientWidth = 841
   Color = clWhite
   Font.Charset = ANSI_CHARSET
@@ -148,5 +148,14 @@ object frmShop: TfrmShop
     Caption = '2.9 Calculate Selling Price'
     TabOrder = 11
     OnClick = btnCalcSellPriceClick
+  end
+  object btnSupplierItems: TButton
+    Left = 24
+    Top = 455
+    Width = 148
+    Height = 25
+    Caption = '2.10 Supplier Items'
+    TabOrder = 12
+    OnClick = btnSupplierItemsClick
   end
 end

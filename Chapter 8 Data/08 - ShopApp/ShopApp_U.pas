@@ -23,6 +23,7 @@ type
     btnAveStock: TButton;
     Label3: TLabel;
     btnCalcSellPrice: TButton;
+    btnSupplierItems: TButton;
     procedure FormShow(Sender: TObject);
     procedure btnProdSpecialClick(Sender: TObject);
     procedure btnCountSpecialsClick(Sender: TObject);
@@ -35,6 +36,7 @@ type
     procedure btnCalcSellPriceClick(Sender: TObject);
     procedure dbgProductsCellClick(Column: TColumn);
     procedure dbgSuppliersCellClick(Column: TColumn);
+    procedure btnSupplierItemsClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -190,6 +192,32 @@ begin
     dbmShopDB.tblProducts.Next;
   end;
 
+end;
+
+procedure TfrmShop.btnSupplierItemsClick(Sender: TObject);
+begin
+  dbmShopDB.tblSuppliers.first;
+  redOut.Clear;
+  while not dbmShopDB.tblSuppliers.EOF do
+  begin
+    redOut.Lines.Add(dbmShopDB.tblSuppliers['SuppName'] + ': ' +
+      dbmShopDB.tblSuppliers['CellNo'] + #10 + '-------------------------');
+
+    dbmShopDB.tblProducts.first;
+    while not dbmShopDB.tblProducts.EOF do
+    begin
+      if dbmShopDB.tblSuppliers['SuppID'] = dbmShopDB.tblProducts['SuppID'] then
+      begin
+        redOut.Lines.Add(dbmShopDB.tblProducts['Descrip'] + ': ' +
+          FloatToStrF(dbmShopDB.tblProducts['SuppPrice'], ffCurrency, 8, 2));
+      end;
+
+      dbmShopDB.tblProducts.Next;
+    end;
+    redOut.Lines.Add('');
+
+    dbmShopDB.tblSuppliers.Next;
+  end;
 end;
 
 procedure TfrmShop.btnCalcSellPriceClick(Sender: TObject);
